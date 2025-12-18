@@ -1,0 +1,18 @@
+set_io clk_12MHz 20
+set_io -pullup yes reset 2
+set_io -pullup yes check_answer 46
+set_io keypad_input[3] 44
+set_io keypad_input[2] 6
+set_io keypad_input[1] 9
+set_io keypad_input[0] 11
+
+set_io rgb[5] 37
+set_io rgb[4] 31
+set_io rgb[3] 35
+set_io rgb[2] 32
+set_io rgb[1] 27
+set_io rgb[0] 26
+set_io vsync 23
+set_io hsync 25
+
+

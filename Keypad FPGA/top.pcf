@@ -1,0 +1,28 @@
+# ===============================
+# Reset
+# ===============================
+set_io rst_n      11
+
+# ===============================
+# Keypad Rows (Output)
+# ===============================
+set_io row[0]     36
+set_io row[1]     42
+set_io row[2]     38
+set_io row[3]     28
+
+# ===============================
+# Keypad Columns (Input)
+# ===============================
+set_io -pullup yes col[0]     31
+set_io -pullup yes col[1]     37
+set_io -pullup yes col[2]     34
+set_io -pullup yes col[3]     43
+
+# ===============================
+# LEDs
+# ===============================
+set_io led[0]     2
+set_io led[1]     46
+set_io led[2]     47
+set_io led[3]     45    
