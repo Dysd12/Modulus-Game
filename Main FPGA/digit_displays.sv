@@ -29,7 +29,7 @@ module one_digit_display #(
     assign rgb = mem[address][5:0];
 
     initial begin
-        $readmemh("mem File/digits_trans.mem", mem);
+        $readmemh("mem File/digits_new.mem", mem);
     end
     
 endmodule

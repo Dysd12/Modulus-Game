@@ -103,7 +103,6 @@ always_comb begin
             end
         end
         /* End of Game. */
-        ST_GAME_OVER:
     endcase
 
     /* Display Logic. */
