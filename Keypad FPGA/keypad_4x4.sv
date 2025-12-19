@@ -1,15 +1,15 @@
 module keypad_4x4 (
-    input wire clk,
-    input wire rst_n,
-    input wire [3:0] col,
-    output reg [3:0] row,
-    output reg key_valid,
-    output reg [3:0] key_code
+    input logic clk,
+    input logic rst_n,
+    input logic [3:0] col,
+    output logic [3:0] row,
+    output logic key_valid,
+    output logic [3:0] key_code
 );
 
-    reg [1:0] row_idx;
-    reg frame_valid;
-    reg [3:0] frame_code;
+    logic [1:0] row_idx;
+    logic frame_valid;
+    logic [3:0] frame_code;
 
     always_ff @(posedge clk or negedge rst_n) begin
         if (!rst_n)

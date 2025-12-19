@@ -1,7 +1,6 @@
 from PIL import Image
 from pathlib import Path
 
-# ========== USER SETTINGS ==========
 IN_DIR = Path(r"vga_assets\PNG File")
 OUT_FILE = Path(r"vga_assets\mem File\digits.mem")   # output .mem
 W = 20
@@ -11,7 +10,7 @@ FILES = [
     "zero.png", "one.png", "two.png", "three.png", "four.png",
     "five.png", "six.png", "seven.png", "eight.png", "nine.png"
 ]
-# ===================================
+
 
 def rgb_to_rgb6(r, g, b):
     return ((r >> 6) << 4) | ((g >> 6) << 2) | (b >> 6)  # 0..63

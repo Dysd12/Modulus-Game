@@ -10,15 +10,14 @@ module one_digit_display #(
     output logic       on,
     output logic [5:0] rgb
 );
-    logic [4:0]  sprite_x; // 2^5 = 32, only 20 needed
-    logic [4:0]  sprite_y; // 2^5 = 32, only 30 needed
-    logic [9:0]  sprite_index; // 2^10 = 1024, only 600 needed tho
-    logic [12:0] address; // 2^13 = 8192, only 6000 needed tho
+    logic [4:0]  sprite_x; // 2^5 = 32
+    logic [4:0]  sprite_y; // 2^5 = 32
+    logic [9:0]  sprite_index; // 2^10 = 1024
+    logic [12:0] address; // 2^13 = 8192
     logic [7:0]  mem [0:5999];
 
     /* Checks if the sprite is inside the box. */
-    assign on = (col >= X0) && (col < X0 + W) && 
-                (row >= Y0) && (row < Y0 + H);
+    assign on = (col >= X0) && (col < X0 + W) && (row >= Y0) && (row < Y0 + H);
     // Get the local coords inside the sprite
     assign sprite_x = col - X0;
     assign sprite_y = row - Y0;

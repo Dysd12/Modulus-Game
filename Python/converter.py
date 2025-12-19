@@ -1,22 +1,14 @@
 from PIL import Image
 from pathlib import Path
 
-# ===============================
-# USER-EDITABLE PARAMETERS
-# ===============================
-
 BG_W = 160
 BG_H = 120
 
-# ===============================
-# AUTO OUTPUT NAME
-# ===============================
 img_path = Path(r"bg2.png")
 OUT_FILE = img_path.stem + ".mem"   # "one.png" -> "one.mem"
 
-# ===============================
-# CONVERSION LOGIC
-# ===============================
+# conversion logic
+
 def rgb_to_rgb6(r, g, b):
     r2 = r >> 6
     g2 = g >> 6

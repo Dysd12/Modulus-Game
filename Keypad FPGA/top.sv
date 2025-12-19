@@ -14,9 +14,6 @@ module top (
         .CLKHF   (clk_48MHz)
     );
 
-    // ===============================
-    // Clock Divider (48 MHz → 1 kHz)
-    // ===============================
     logic [15:0] div_cnt;
     logic        scan_clk;
 
@@ -32,9 +29,6 @@ module top (
         end
     end
 
-    // ===============================
-    // Keypad
-    // ===============================
     logic        key_valid;
     logic [3:0]  key_code;
 
@@ -47,9 +41,6 @@ module top (
         .key_code  (key_code)
     );
 
-    // ===============================
-    // LED Debug Output
-    // ===============================
     assign led = key_valid ? key_code : 4'b0000;
 
 endmodule

@@ -52,7 +52,6 @@ logic health_zero;
 
 /* Clock Management */
 logic [9:0] seconds;
-logic stop_clock;
 
 /* Number Generation */
 logic [6:0] dividend, ran_dividend, ran_temp_divisor;
@@ -80,7 +79,6 @@ end
 always_comb begin
     next_state = current_state;
     gain_health = 1'b0;
-    stop_clock = 1'b0;
     /* Makes sure ran_divisor is between 2-9. */
     ran_divisor = (ran_temp_divisor[2:0] == 3'd0) ? 4'd8 :
                   (ran_temp_divisor[2:0] == 3'd1) ? 4'd9 :
@@ -105,7 +103,7 @@ always_comb begin
             end
         end
         /* End of Game. */
-        ST_GAME_OVER: stop_clock = 1'b1;
+        ST_GAME_OVER:
     endcase
 
     /* Display Logic. */
@@ -128,7 +126,7 @@ end
 clock u_clock (
     .clk(clk_12MHz),
     .reset(reset),
-    .stop(stop_clock),
+    .stop(health_zero),
     .seconds(seconds)
 );
 

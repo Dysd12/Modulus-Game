@@ -27,11 +27,3 @@ module bg_display (
     end
 
 endmodule
-
-/* bg_rom.sv
- * Parameter: W (width), H (height) - specify the background image dimensions
- * Input: addr - address to specify which pixel to retrieve
- * Description: This module implements a ROM to store background pixel data and
- *              retrieve pixel data based on the input address.
- * Output: data - 6-bit pixel data
- */
